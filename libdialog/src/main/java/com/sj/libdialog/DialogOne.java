@@ -16,6 +16,7 @@ public class  DialogOne extends Dialog {
     private TextView msgTxv;	//提示内容文字
     private TextView positiveTxv;	//确定按钮
     private TextView negativeTxv;	//取消按钮
+    public int mBackground = -1;
 
 
     /**
@@ -23,7 +24,6 @@ public class  DialogOne extends Dialog {
      */
     public DialogOne(Context context) {
         super(context,R.style.DialogOne);	//自定义style主要去掉标题，标题将在setCustomView中自定义设置
-
         setCustomView();
     }
 
@@ -34,17 +34,21 @@ public class  DialogOne extends Dialog {
         this.setOnCancelListener(cancelListener);
         setCustomView();
     }
-
-    public DialogOne(Context context, int theme) {
+/**
+ * @param background  drawable <shape> file</>*/
+    public DialogOne(Context context, int background) {
         super(context, R.style.DialogOne);
+        mBackground = background;
         setCustomView();
     }
-
     /**
      * 设置整个弹出框的视图
      */
     private void setCustomView(){
         View mView = LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
+        if(mBackground != -1){
+            mView.setBackgroundColor(mBackground);
+        }
         titleTxv = mView.findViewById(R.id.title);
         msgTxv =  mView.findViewById(R.id.message);
         positiveTxv =  mView.findViewById(R.id.positiveButton);
