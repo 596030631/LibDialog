@@ -3,13 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@null">
-<LinearLayout
-    android:layout_marginLeft="3dp"
-    android:layout_marginRight="3dp"
-    android:layout_width="match_parent"
     android:background="@drawable/background"
-    android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
       android:layout_gravity="center_horizontal"
@@ -94,4 +88,4 @@
             android:text="取消"/>
     </LinearLayout>
 </LinearLayout>
-</LinearLayout>
+
