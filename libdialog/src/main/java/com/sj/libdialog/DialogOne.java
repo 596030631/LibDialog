@@ -21,7 +21,7 @@ public class  DialogOne extends Dialog {
     /**
      * @param context
      */
-    public DialogOne(Context context,View v) {
+    public DialogOne(Context context) {
         super(context,R.style.DialogOne);	//自定义style主要去掉标题，标题将在setCustomView中自定义设置
 
         setCustomView();
