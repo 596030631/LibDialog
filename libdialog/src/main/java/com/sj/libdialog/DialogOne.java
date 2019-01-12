@@ -17,11 +17,13 @@ public class  DialogOne extends Dialog {
     private TextView positiveTxv;	//确定按钮
     private TextView negativeTxv;	//取消按钮
 
+
     /**
      * @param context
      */
-    public DialogOne(Context context) {
+    public DialogOne(Context context,View v) {
         super(context,R.style.DialogOne);	//自定义style主要去掉标题，标题将在setCustomView中自定义设置
+
         setCustomView();
     }
 
@@ -43,10 +45,10 @@ public class  DialogOne extends Dialog {
      */
     private void setCustomView(){
         View mView = LayoutInflater.from(getContext()).inflate(R.layout.dialog, null);
-        titleTxv = (TextView) mView.findViewById(R.id.title);
-        msgTxv = (TextView) mView.findViewById(R.id.message);
-        positiveTxv = (TextView) mView.findViewById(R.id.positiveButton);
-        negativeTxv = (TextView) mView.findViewById(R.id.negativeButton);
+        titleTxv = mView.findViewById(R.id.title);
+        msgTxv =  mView.findViewById(R.id.message);
+        positiveTxv =  mView.findViewById(R.id.positiveButton);
+        negativeTxv =  mView.findViewById(R.id.negativeButton);
         super.setContentView(mView);
     }
 
